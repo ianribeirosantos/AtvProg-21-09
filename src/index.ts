@@ -1,0 +1,138 @@
+import Governador from './Governador';
+import DeputadoEstadual from './DeputadoEstadual';
+import DeputadoFederal from './DeputadoFederal';
+import Presidente from './Presidente';
+import Senador from './Senador';
+
+let govPE = new Governador(
+    27,                    
+    "Pernambuco",             
+    "Raquel Lyra",           
+    "PSD",                  
+    "Palácio do Campo das Princesas, sede do Governo do Estado de Pernambuco",
+    60931.00,                   
+    "Estadual",               
+    "Executivo",              
+    "Palácio do Governo" 
+);
+
+let govPB = new Governador(
+    22,                    
+    "Paraíba",             
+    "Lucas Ribeiro",           
+    "PP",                  
+    "Praça João Pessoa",    
+    35032.58,                   
+    "Estadual",               
+    "Executivo",              
+    "Palácio da Redenção" 
+);
+
+const depPE1 = new DeputadoEstadual("Pernambuco", [], "Sileno Guedes", "PSB", "Rua da Aurora, nº 631", 34774.64, "Estadual", "Legislativo", "ALEPE");
+depPE1.adicionarComissao("Comissão de Finanças, Orçamento e Tributação");
+
+const depPE2 = new DeputadoEstadual("Pernambuco", [], "Alberto Feitosa", "PL", "Rua da Aurora, nº 631", 34774.64, "Estadual", "Legislativo", "ALEPE");
+depPE2.adicionarComissao("Comissão de Desenvolvimento Econômico e Turismo");
+
+const depPE3 = new DeputadoEstadual("Pernambuco", [], "Dani Portela", "PT", "Rua da União, nº 383", 34774.64, "Estadual", "Legislativo", "ALEPE");
+depPE3.adicionarComissao("Comissão de Cidadania e Direitos Humanos");
+
+const depPB1 = new DeputadoEstadual("Paraíba", [], "Chico Mendes", "PSB", "Praça João Pessoa, S/N", 34774.64, "Estadual", "Legislativo", "ALPB");
+depPB1.adicionarComissao("Comissão de Incentivo às Relações Internacionais de Negócios");
+
+const depPB2 = new DeputadoEstadual("Paraíba", [], "Jane Panta", "PP", "Praça João Pessoa, S/N", 34774.64, "Estadual", "Legislativo", "ALPB");
+depPB2.adicionarComissao("Comissão de Saúde, Saneamento e Assistência Social");
+
+const lula = new Presidente(38, "Luiz Inácio Lula da Silva", "PT", ["Novo PAC", "Programa Pé-de-Meia"], "Praça dos Três Poderes, Brasília - DF", 44008, "Federal", "Executivo", "Palácio do Planalto");
+lula.adicionarProjeto("Novo PAC (Programa de Aceleração do Crescimento)");
+lula.adicionarProjeto("Programa Pé-de-Meia");
+lula.exercerMandato();
+
+const teresaLeitao = new Senador("Pernambuco", 2022, "Teresa Leitão", "PT", "Praça dos Três Poderes, Brasília - DF", 44008, "Federal", "Legislativo", "Senado Federal");
+
+const humbertoCosta = new Senador("Pernambuco", 2018, "Humberto Costa", "PT", "Praça dos Três Poderes, Brasília - DF", 44008, "Federal", "Legislativo", "Senado Federal");
+
+const marcosPontes = new Senador("São Paulo", 2022, "Marcos Pontes", "PL", "Praça dos Três Poderes, Brasília - DF", 44008, "Federal", "Legislativo", "Senado Federal");
+
+teresaLeitao.adicionarProjeto("Valorização do Piso Salarial dos Professores");
+
+humbertoCosta.adicionarProjeto("Ampliação da Farmácia Popular");
+
+marcosPontes.adicionarProjeto("Incentivo à Inovação Tecnológica e Aeroespacial");
+
+const pedroCampos = new DeputadoFederal("Educação", "Pedro Campos", "PSB", "Praça dos Três Poderes, Brasília - DF", 44008, "Federal", "Legislativo", "Câmara dos Deputados");
+
+const tulioGadelha = new DeputadoFederal("Cultura e Meio Ambiente", "Túlio Gadêlha", "REDE", "Praça dos Três Poderes, Brasília - DF", 44008, "Federal", "Legislativo", "Câmara dos Deputados");
+
+const clarissaTercio = new DeputadoFederal("Bancada da Família", "Clarissa Tércio", "PP", "Praça dos Três Poderes, Brasília - DF", 44008, "Federal", "Legislativo", "Câmara dos Deputados");
+
+const guilhermeBoulos = new DeputadoFederal("Habitação", "Guilherme Boulos", "PSOL", "Praça dos Três Poderes, Brasília - DF", 44008, "Federal", "Legislativo", "Câmara dos Deputados");
+
+const tabataAmaral = new DeputadoFederal("Educação", "Tabata Amaral", "PSB", "Praça dos Três Poderes, Brasília - DF", 44008, "Federal", "Legislativo", "Câmara dos Deputados");
+
+pedroCampos.adicionarProjeto("Tarifa Social de Água e Esgoto");
+tulioGadelha.adicionarProjeto("Incentivo à Cultura Popular e Patrimônio Histórico");
+clarissaTercio.adicionarProjeto("Apoio à Maternidade Atípica");
+guilhermeBoulos.adicionarProjeto("Cozinhas Solidárias");
+tabataAmaral.adicionarProjeto("Combate à Pobreza Menstrual nas Escolas");
+
+console.log("MANDATOS DOS GOVERNADORES");
+govPE.exercerMandato();
+govPB.exercerMandato();
+
+console.log("MANDATOS DOS DEPUTADOS ESTADUAIS");
+depPE1.exercerMandato();
+depPE2.exercerMandato();
+depPE3.exercerMandato();
+depPB1.exercerMandato();
+depPB2.exercerMandato();
+
+console.log("MANDATOS DOS DEPUTADOS FEDERAIS");
+pedroCampos.exercerMandato();
+tulioGadelha.exercerMandato();
+clarissaTercio.exercerMandato();
+guilhermeBoulos.exercerMandato();
+tabataAmaral.exercerMandato();
+
+console.log("MANDATOS DOS SENADORES");
+teresaLeitao.exercerMandato();
+humbertoCosta.exercerMandato();
+marcosPontes.exercerMandato();
+
+console.log("DEMONSTRAÇÃO DAS AÇÕES ESPECÍFICAS");
+
+console.log("Ações do Presidente:");
+console.log(lula.nomearExonerarMinistros());
+console.log(lula.comandarForcasArmadas());
+console.log(lula.representarPaisInternacional());
+console.log(lula.elaborarEnviarPPA());
+console.log(lula.elaborarEnviarLDO());
+console.log(lula.elaborarEnviarLOA());
+
+console.log("Ações da Governadora de PE:");
+console.log(govPE.gerirPoliciaMilitar());
+console.log(govPE.administrarRodoviasEstaduais());
+console.log(govPE.coordenarEducacaoSaude());
+console.log(govPE.elaborarEnviarPPAEstadual());
+console.log(govPE.elaborarEnviarLDOEstadual());
+console.log(govPE.elaborarEnviarLOAEstadual());
+
+console.log("Ações do Deputado Estadual:");
+console.log(depPE1.votarPPAEstadual());
+console.log(depPE1.votarLDOEstadual());
+console.log(depPE1.votarLOAEstadual());
+console.log(depPE1.proporEmendas());
+console.log(depPE1.criarCPIEEstadual());
+
+console.log("Ações do Deputado Federal:");
+console.log(pedroCampos.votarPECs());
+console.log(pedroCampos.criarCPINacional());
+console.log(pedroCampos.votarPPA());
+console.log(pedroCampos.votarLDO());
+console.log(pedroCampos.votarLOA());
+console.log(pedroCampos.proporLeisComplementares());
+
+console.log("Ações da Senadora:");
+console.log(teresaLeitao.autoridadesAltoEscalão());
+console.log(teresaLeitao.julgarCrimes());
+console.log(teresaLeitao.representarInteressesEstado());
